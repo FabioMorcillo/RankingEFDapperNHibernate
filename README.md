@@ -1,8 +1,8 @@
-# Entity Framework Core vs Fluent NHibernate vs Fluent Dapper 
+# Projeto demonstrando a análise dos melhores ORMs.
 
-## Qual o melhor e mais rápido ORM ?
+## Qual o melhor e mais rápido ORM ?
 
-Projeto demonstrando a análise dos melhores ORMs.
+Entity Framework Core vs Fluent NHibernate vs Fluent Dapper 
 
 ## Artigo sobre este projeto
 
