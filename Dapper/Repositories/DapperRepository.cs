@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-
+using System.Linq;
 using Dapper;
-
 using Dommel;
 
 using Models;
@@ -36,11 +35,10 @@ namespace DapperFramework.Repositories
             return _sqlConnection
                 .Query<Customer>("SELECT * FROM CUSTOMERS")
                 .AsList();
-            /*
-            return _sqlConnection
-                .GetAll<Customer>()
-                .ToList();
-                */
+
+            //return _sqlConnection
+            //    .GetAll<Customer>()
+            //    .ToList();
         }
 
         public void Dispose()
