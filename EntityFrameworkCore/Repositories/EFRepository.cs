@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using EntityFrameworkCoreFramework.Context;
 
 using Models;
 
-namespace RankingEFDapperNHibernate2
+namespace EntityFrameworkCoreFramework.Repositories
 {
     public class EFRepository : IRepository
     {
@@ -35,6 +36,7 @@ namespace RankingEFDapperNHibernate2
 
         public void Dispose()
         {
+            Context.Dispose();
         }
     }
 }

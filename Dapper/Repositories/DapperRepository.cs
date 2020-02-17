@@ -46,6 +46,7 @@ namespace DapperFramework.Repositories
         public void Dispose()
         {
             _sqlConnection.Close();
+            _sqlConnection.Dispose();
         }
     }
 }

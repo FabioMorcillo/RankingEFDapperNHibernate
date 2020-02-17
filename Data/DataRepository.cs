@@ -27,7 +27,7 @@ namespace Data
 
             var start = DateTime.Now;
 
-            for (var c = 1; c <= 500; ++c)
+            for (var c = 1; c <= 1000; ++c)
             {
                 var customer = _fixture
                     .Build<Customer>()
@@ -50,9 +50,11 @@ namespace Data
 
             var start = DateTime.Now;
 
-            _repository
+            var list = _repository
                 .Query()
                 .ToList();
+
+            Console.WriteLine($"Count -> {list.Count}");
 
             var end = DateTime.Now;
 

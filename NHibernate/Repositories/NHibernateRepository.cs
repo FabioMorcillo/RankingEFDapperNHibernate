@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Models;
 
 using NHibernate;
@@ -44,6 +45,7 @@ namespace NHibernateFramework.Repositories
 
         public void Dispose()
         {
+            _session.Dispose();
         }
     }
 }
