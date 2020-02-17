@@ -1,10 +1,11 @@
-# Entity Framework Core 5 Many-To-Many Example in Progress
+# Entity Framework Core vs Fluent NHibernate vs Fluent Dapper
+# Who have the best performance to add entities and query ?
 
-Projeto demonstrando o recurso mais esperado do Entity Framework Core 5 que é o relacionamento Many-To-Many.
+Projeto demonstrando a performance entre os melhores ORMs.
 
 ## Artigo sobre este projeto
 
-https://medium.com/@fabiomorcillopro/entity-framework-core-5-many-to-many-example-in-progress-9651a2aff99d
+https://medium.com/@fabiomorcillopro
 
 ## Deseja contribuir para este projeto ?
 
