@@ -23,6 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Data", "2 - Data", "{C2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{8C13C491-165E-4F78-8C74-3CCA4E40B017}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - ScriptSQL", "5 - ScriptSQL", "{6A5719D3-F267-4924-806A-24E19A7A96A3}"
+	ProjectSection(SolutionItems) = preProject
+		TableCustomers.sql = TableCustomers.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

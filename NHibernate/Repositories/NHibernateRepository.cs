@@ -11,7 +11,7 @@ namespace NHibernateFramework.Repositories
 {
     public class NHibernateRepository : IRepository
     {
-        private static readonly ISession _session = FluentNHibernateHelper.OpenSession();
+        private readonly ISession _session = FluentNHibernateHelper.OpenSession();
 
         public string Name() => "Fluent NHibernate";
 
