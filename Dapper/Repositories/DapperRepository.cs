@@ -34,6 +34,11 @@ namespace DapperFramework.Repositories
                 .Query<Customer>("SELECT id, name, email FROM CUSTOMERS");
         }
 
+        public void AddAll(IEnumerable<Customer> customerList)
+        {
+            _sqlConnection.Execute(@"insert into dbo.Customers (name, email) values (@Name, @Email)", customerList);
+        }
+
         public void Dispose()
         {
             _sqlConnection.Close();

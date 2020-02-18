@@ -12,5 +12,7 @@ namespace Models
         void RemoveAll();
 
         IEnumerable<Customer> Query();
+
+        void AddAll(IEnumerable<Customer> customerList);
     }
 }

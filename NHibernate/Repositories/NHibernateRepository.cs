@@ -43,6 +43,19 @@ namespace NHibernateFramework.Repositories
                 .Result;
         }
 
+        public void AddAll(IEnumerable<Customer> customerList)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                foreach (var c in customerList)
+                {
+                    _session.Save(c);
+                }
+
+                transaction.Commit();
+            }
+        }
+
         public void Dispose()
         {
             _session.Dispose();

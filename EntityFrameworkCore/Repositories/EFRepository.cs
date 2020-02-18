@@ -34,6 +34,13 @@ namespace EntityFrameworkCoreFramework.Repositories
                 .ToList();
         }
 
+        public void AddAll(IEnumerable<Customer> customerList)
+        {
+            Context.AddRange(customerList);
+
+            Context.SaveChanges();
+        }
+
         public void Dispose()
         {
             Context.Dispose();

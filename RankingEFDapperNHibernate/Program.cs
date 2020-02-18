@@ -28,6 +28,8 @@ namespace RankingEFDapperNHibernate
             {
                 dataRepository.AddCustomers();
 
+                dataRepository.AddAllCustomers();
+
                 dataRepository.QueryCustomers();
             }
 

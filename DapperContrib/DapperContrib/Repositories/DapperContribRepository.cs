@@ -32,6 +32,11 @@ namespace DapperFramework.Repositories
             return _sqlConnection.GetAll<Customer>();
         }
 
+        public void AddAll(IEnumerable<Customer> customerList)
+        {
+            _sqlConnection.Insert(customerList);
+        }
+
         public void Dispose()
         {
             _sqlConnection.Close();

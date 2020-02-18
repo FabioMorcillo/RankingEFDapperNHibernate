@@ -17,28 +17,29 @@ namespace Models
         public static void Show()
         {
             ShowOperation("AddCustomers");
+            ShowOperation("AddAllCustomers");
             ShowOperation("QueryCustomers");
         }
 
-        static void ShowOperation(string operation)
+        private static void ShowOperation(string operation)
         {
             Console.WriteLine();
             Console.WriteLine($"--- The best of {operation} ---");
 
             TimeSpan? firstTime = null;
-            foreach (var result in _results
+            foreach (var ((_, framework), value) in _results
                 .Where(r => r.Key.operation.Equals(operation))
                 .OrderBy(r => r.Value))
             {
                 if (firstTime == null)
                 {
-                    firstTime = result.Value;
+                    firstTime = value;
 
-                    Console.WriteLine($"{result.Key.framework} - {result.Value}");
+                    Console.WriteLine($"{framework} - {value}");
                 }
                 else
                 {
-                    Console.WriteLine($"{result.Key.framework} - {result.Value} - {Math.Round((double)(result.Value / firstTime), 2)} times more slow");
+                    Console.WriteLine($"{framework} - {value} - {Math.Round((double)(value / firstTime), 2)} times more slow");
                 }
             }
         }
