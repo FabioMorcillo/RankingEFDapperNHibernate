@@ -13,6 +13,7 @@ namespace Data
     {
         private readonly IRepository _repository;
         private readonly IFixture _fixture;
+        private const int NumberOfRecords = 500;
 
         public DataRepository(IRepository repository)
         {
@@ -28,7 +29,7 @@ namespace Data
 
             var customerList = new List<Customer>();
 
-            for (var c = 1; c <= 1_000; ++c)
+            for (var c = 1; c <= NumberOfRecords; ++c)
             {
                 var customer = _fixture
                     .Build<Customer>()
@@ -55,7 +56,7 @@ namespace Data
 
             var customerList = new List<Customer>();
 
-            for (var c = 1; c <= 1_000; ++c)
+            for (var c = 1; c <= NumberOfRecords; ++c)
             {
                 var customer = _fixture
                     .Build<Customer>()
