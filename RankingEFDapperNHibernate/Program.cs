@@ -1,13 +1,8 @@
 ﻿using System;
-
 using DapperFramework.Repositories;
-
 using Data;
-
 using EntityFrameworkCoreFramework.Repositories;
-
 using Models;
-
 using NHibernateFramework.Repositories;
 
 namespace RankingEFDapperNHibernate
@@ -15,10 +10,12 @@ namespace RankingEFDapperNHibernate
     class Program
     {
         static void Main(string[] args)
-        {
+        { 
+            Execute(new NHibernateRepository());
+
             Execute(new DapperRepository());
 
-            Execute(new NHibernateRepository());
+            Execute(new DapperContribRepository());
 
             Execute(new EFRepository());
 

@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - ScriptSQL", "5 - Script
 		TableCustomers.sql = TableCustomers.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperContrib", "DapperContrib\DapperContrib\DapperContrib.csproj", "{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{8C13C491-165E-4F78-8C74-3CCA4E40B017}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C13C491-165E-4F78-8C74-3CCA4E40B017}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C13C491-165E-4F78-8C74-3CCA4E40B017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{37A35959-A402-47C6-9980-AD88F6557BBB} = {FD77645F-7BD9-4B1F-9729-2D7D522FAFD5}
 		{11AD7C21-5827-49BB-BD2E-C0CE7CD4706E} = {607783A4-EB21-48FC-BB5C-0D16FD4B7CC7}
 		{8C13C491-165E-4F78-8C74-3CCA4E40B017} = {C2AAFE45-16B4-400A-A6FE-6F48AA6076E2}
+		{D81C97D9-3E1F-45C3-8F4D-D4728A8DBD9F} = {5E68BF0E-AD41-4286-A353-7B2944DB51C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2729BC7A-09F7-4D86-BEE6-15574BAE6633}

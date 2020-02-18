@@ -23,11 +23,11 @@ namespace Data
 
         public void AddCustomers()
         {
-            Console.WriteLine($"Processing {MethodInfo.GetCurrentMethod().Name} in {_repository.Name()}...");
+            Console.WriteLine($"Processing {MethodBase.GetCurrentMethod().Name} in {_repository.Name()}...");
 
             var start = DateTime.Now;
 
-            for (var c = 1; c <= 1000; ++c)
+            for (var c = 1; c <= 1_000; ++c)
             {
                 var customer = _fixture
                     .Build<Customer>()
@@ -41,12 +41,12 @@ namespace Data
 
             var elapsed = end - start;
 
-            Results.Add(MethodInfo.GetCurrentMethod().Name, _repository.Name(), elapsed);
+            Results.Add(MethodBase.GetCurrentMethod().Name, _repository.Name(), elapsed);
         }
 
         public void QueryCustomers()
         {
-            Console.WriteLine($"Processing {MethodInfo.GetCurrentMethod().Name} in {_repository.Name()}...");
+            Console.WriteLine($"Processing {MethodBase.GetCurrentMethod().Name} in {_repository.Name()}...");
 
             var start = DateTime.Now;
 
@@ -54,13 +54,13 @@ namespace Data
                 .Query()
                 .ToList();
 
-            Console.WriteLine($"Count -> {list.Count}");
-
             var end = DateTime.Now;
 
             var elapsed = end - start;
 
-            Results.Add(MethodInfo.GetCurrentMethod().Name, _repository.Name(), elapsed);
+            Console.WriteLine($"Count -> {list.Count}");
+
+            Results.Add(MethodBase.GetCurrentMethod().Name, _repository.Name(), elapsed);
         }
 
 
