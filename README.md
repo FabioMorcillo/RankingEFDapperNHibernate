@@ -1,5 +1,7 @@
 # Projeto demonstrando a análise dos melhores ORMs.
 
+![.NET Core](https://github.com/FabioMorcillo/RankingEFDapperNHibernate/workflows/.NET%20Core/badge.svg?branch=master)
+
 ## Qual o melhor e mais rápido ORM ?
 
 Entity Framework Core vs Fluent NHibernate vs Fluent Dapper 
