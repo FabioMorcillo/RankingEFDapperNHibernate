@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 using Models;
 
 using NHibernate;
@@ -39,8 +39,20 @@ namespace NHibernateFramework.Repositories
         {
             return _session
                 .Query<Customer>()
-                .ToListAsync()
-                .Result;
+                .ToList();
+        }
+
+        public void AddAll(IEnumerable<Customer> customerList)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                foreach (var c in customerList)
+                {
+                    _session.Save(c);
+                }
+
+                transaction.Commit();
+            }
         }
 
         public void Dispose()

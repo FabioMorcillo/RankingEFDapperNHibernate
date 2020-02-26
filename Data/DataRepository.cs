@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -12,6 +13,7 @@ namespace Data
     {
         private readonly IRepository _repository;
         private readonly IFixture _fixture;
+        private const int NumberOfRecords = 500;
 
         public DataRepository(IRepository repository)
         {
@@ -23,30 +25,61 @@ namespace Data
 
         public void AddCustomers()
         {
-            Console.WriteLine($"Processing {MethodInfo.GetCurrentMethod().Name} in {_repository.Name()}...");
+            Console.WriteLine($"Processing {nameof(AddCustomers)} in {_repository.Name()}...");
 
-            var start = DateTime.Now;
+            var customerList = new List<Customer>();
 
-            for (var c = 1; c <= 1000; ++c)
+            for (var c = 1; c <= NumberOfRecords; ++c)
             {
                 var customer = _fixture
                     .Build<Customer>()
-                    .Without(c => c.Id)
+                    .Without(_ => _.Id)
                     .Create();
 
-                _repository.Add(customer);
+                customerList.Add(customer);
             }
+
+            var start = DateTime.Now;
+
+            customerList.ForEach(_ => _repository.Add(_));
 
             var end = DateTime.Now;
 
             var elapsed = end - start;
 
-            Results.Add(MethodInfo.GetCurrentMethod().Name, _repository.Name(), elapsed);
+            Results.Add(nameof(AddCustomers), _repository.Name(), elapsed);
+        }
+
+        public void AddAllCustomers()
+        {
+            Console.WriteLine($"Processing {nameof(AddAllCustomers)} in {_repository.Name()}...");
+
+            var customerList = new List<Customer>();
+
+            for (var c = 1; c <= NumberOfRecords; ++c)
+            {
+                var customer = _fixture
+                    .Build<Customer>()
+                    .Without(_ => _.Id)
+                    .Create();
+
+                customerList.Add(customer);
+            }
+
+            var start = DateTime.Now;
+
+            _repository.AddAll(customerList);
+
+            var end = DateTime.Now;
+
+            var elapsed = end - start;
+
+            Results.Add(nameof(AddAllCustomers), _repository.Name(), elapsed);
         }
 
         public void QueryCustomers()
         {
-            Console.WriteLine($"Processing {MethodInfo.GetCurrentMethod().Name} in {_repository.Name()}...");
+            Console.WriteLine($"Processing {nameof(QueryCustomers)} in {_repository.Name()}...");
 
             var start = DateTime.Now;
 
@@ -54,13 +87,13 @@ namespace Data
                 .Query()
                 .ToList();
 
-            Console.WriteLine($"Count -> {list.Count}");
-
             var end = DateTime.Now;
 
             var elapsed = end - start;
 
-            Results.Add(MethodInfo.GetCurrentMethod().Name, _repository.Name(), elapsed);
+            Console.WriteLine($"Count -> {list.Count}");
+
+            Results.Add(nameof(QueryCustomers), _repository.Name(), elapsed);
         }
 
 

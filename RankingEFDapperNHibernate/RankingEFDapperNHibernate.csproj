@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DapperContrib\DapperContrib\DapperContrib.csproj" />
     <ProjectReference Include="..\Dapper\DapperFramework.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\EntityFrameworkCore\EntityFrameworkCoreFramework.csproj" />
